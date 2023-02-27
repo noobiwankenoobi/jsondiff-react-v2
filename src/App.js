@@ -9,8 +9,8 @@ function App() {
   const [diff1, setDiff1] = useState([]);
   const [diff2, setDiff2] = useState([]);
 
-  const [file1, setFile1] = useState()
-  const [file2, setFile2] = useState()
+  const [file1, setFile1] = useState({})
+  const [file2, setFile2] = useState({})
 
 
   useEffect(()=>{
@@ -86,9 +86,18 @@ function App() {
     } else {
       window.alert("Please upload file 1 first")
     }
-    
   }
 
+  const clearAll = () => {
+    setData1([])
+    setData2([])
+    setDiff1([])
+    setDiff2([])
+    setFile1({})
+    setFile2({})
+    document.getElementById("file1upload").value = "";
+    document.getElementById("file2upload").value = "";
+  }
  
 
 
@@ -96,20 +105,23 @@ function App() {
     <div className="App">
       <h1>Berxi Json Differ V1</h1>
      
-
-      <button className='button' onClick={()=> showDiff()}>Show Diff</button>
+      <div className='button-div'>
+        <button className='button-primary' onClick={()=> showDiff()}>Show Diff</button>
+        <button className='button red' onClick={()=> clearAll()}>Clear All</button>
+      </div>
+      
 
       <div className='data-container'>
         <div className='data-column'>
           <form>
           <h2>File 1 Upload</h2>
-          <input type="file" onChange={handleFile1Change}/>
+          <input type="file" id="file1upload" onChange={handleFile1Change}/>
           </form>
         </div>
         <div className='data-column'>
           <form>
           <h2>File 2 Upload</h2>
-          <input type="file" onChange={handleFile2Change}/>
+          <input type="file" id="file2upload" onChange={handleFile2Change}/>
           </form>
         </div>
       </div>
