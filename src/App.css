@@ -1,38 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
 .App {
   text-align: center;
+  font-family: 'Roboto', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.data-container {
+  display:flex;
+  flex-direction: row;
+  margin: 0px auto;
+  width: 80%;
+  justify-content: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.data-column {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 20px;
+  margin: 10px 10px;
+  justify-content: left;
+  width: 50%;
+  text-align: left;
+  border: 1px solid rgb(200, 199, 199);
+  border-radius: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+.red {
+  color: red;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.button {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid rgb(200, 199, 199);
+  border-radius: 5px;
+}
+
+::-webkit-file-upload-button {
+  border: 1px solid rgb(200, 199, 199);
+  border-radius: 5px;
+  padding: 10px;
 }
